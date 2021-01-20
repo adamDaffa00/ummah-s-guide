@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+Pro:wght@300&display=swap');
+@font-face {
+  font-family: lpmq;
+  src: url(../font/lpmq.woff);
+}
+@import 'config';
+@import 'responsive';
+
+
+
+$dark-color: #27045b;
+$black: #000;
+$secondary-color: #ffd739;
+$light-color: #fff;
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+p,ul {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+
+// arabic font
+.arab {
+  font-family: lpmq ;
+}
+
+// animation class 
+.box {
+  opacity: 0;
+  transform: translateY(25px);
+  @include easeOut;
+}
+.box-appear {
+  opacity: 1;
+  transform: translateY(0) ;
+}
+
+
+// search-input style 
+.search-input {
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+
+body {
+  padding: 0;
+  font-family: 'Open sans',Sans-Serif;
+  margin: 0;
+  max-width: 100vw;
+  line-height: 1.6;
+}
+.top-navbar{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  left: 0;
+  color: $light-color;
+  background-color: $dark-color;
+  .logo a {
+    font-weight: 800;
+    color: $light-color;
+  }
+  .config {
+    font-size: 2rem;
+  }
+  .config-menu {
+    margin: 0;
+    position: fixed;
+    right: 0;
+    top: 60px;
+    transform: translatex(100%);
+    height: calc(100vh - 60px);
+    padding: 2rem;
+    background: $dark-color;
+    color: $light-color;
+    @include easeOut;
+    li {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    &.show {
+     transform: translatex(0%);
+    }
+  }
+  
+}
+
+.landing {
+  height: 100vh;
+  width: 100%;
+  background: url('../img/bg-img.jpg') no-repeat center center/cover;
+  .gradient-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.5);
+    img {
+      height: 250px;
+      width: 250px;
+      margin: 3rem 0;
+    }
+    input {
+      height: 45px;
+      display: block;
+      outline: none;
+      padding: 0.7rem 1rem;
+      font-size: 1.1rem;
+    }
+    button {
+      height: 45px;
+      display: block;
+      @include buttonFormat;
+      outline: none;
+      background: $secondary-color;
+      color: $light-color;
+      font-size: 1.5rem;
+      padding: 0 2rem;
+      font-weight: 800;
+      text-align: center;
+      opacity: 1;
+      &:hover {
+        @include easeOut;
+        opacity: .8;
+      }
+    }
+  }
+}
+
+.menu {
+  & {
+    background: rgba($dark-color,.03);
+    padding: 4rem 1rem;
+  }
+  color: $light-color;
+  padding: 1rem;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3,130px) ;
+  justify-content: center;
+  align-items: center;
+  
+  .card {
+    height: 130px;
+    @include easeOut;
+    &:nth-child(1) {
+      background: url('../img/mp3.jpg') no-repeat center center/cover;
+    }
+    &:nth-child(2) {
+      background: url('../img/window.jpg') no-repeat center center/cover;
+    }
+    &:nth-child(3) {
+      background: url('../img/mosque.jpg') no-repeat center center/cover;
+    }
+    &:nth-child(4) {
+      background: url('../img/pray.jpg') no-repeat center center/cover;
+    }
+    &:nth-child(5) {
+      background: url('../img/alquran.jpg') no-repeat center center/cover;
+    }
+    .brightness-bg {
+      @include centering;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      background: rgba($dark-color,.5);
+    }
+    
+    &:hover {
+      border: 5px solid $dark-color;
+    }
+  }
+}
+
+
+
+
+
+
+.list-surah,.list-murotal,.list-asma,.list-doa,.list-wirid,.list-city{
+  & {
+    padding: 4rem 0;
+  }
+  button {
+    @include buttonFormat;
+    font-size: 1.5rem;
+    color: $secondary-color;
+  }
+
+}
+
+.list {
+    border: .7px solid $dark-color;
+    display: flex;
+    width: 70%;
+    padding: .8rem 1.3rem;
+    margin: 1rem auto;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    &:hover {
+      color: $light-color;
+      background: $dark-color;
+      box-shadow: 0 0 7px 1px rgba($dark-color,.5);
+      @include easeOut;
+      div {
+       p:nth-child(2) {
+         @include easeOut;
+         color: $light-color;
+       }
+      }
+    }
+    
+    div {
+     flex: 1;
+     margin-left: 2rem;
+     p:nth-child(1) {
+       font-size: 1.3rem;
+     }
+     p:nth-child(2) {
+       font-style: italic;
+       color: rgba($black,.5);
+       font-size: .8rem;
+     }
+    }
+
+}
+
+/** list ayat style  **/
+
+.ayat-section {
+  padding-top: 3rem;
+  .bismillah {
+    text-align: center;
+    font-size: 2rem;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    border: 1px solid $dark-color;
+    .nav-ayat {
+      background: $dark-color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      height: 50px;
+      margin-bottom: 2rem;
+    }
+    .content-ayat {
+      padding: 0 1rem;     
+    }
+    button {
+      @include buttonFormat;
+      font-size: 1.5rem;
+      margin: 0 .5rem;
+      color: $secondary-color;
+    }
+    .arab {
+      text-align: right;
+      font-size: 2rem;
+    }
+    p {
+      margin: 2rem 0;
+    &.arti {
+       font-style: italic;
+    }
+    }
+  }
+}
+
+
+
+// doa harian page style
+
+.list-doa,.list-wirid {
+  li {
+    padding: 2rem 3.5rem;
+    margin: 1.3rem 0;
+    box-shadow: 0 0 5px 1px rgba($black,.1);
+   p:nth-child(3) {
+     font-size: .8rem;
+     font-style: italic;
+   }
+  }
+}
+
+
+
+// jadwal sholat styling
+.city-input {
+  border: 1px solid $dark-color;
+  margin-top: 6rem;
+  input,button {
+    padding: .7rem;
+    font-size: 1.1rem;
+  }
+  input {
+    width: 85%;
+    border: none;
+    outline: none;
+  }
+  button {
+    @include buttonFormat;
+    width: 15%;
+    background: $secondary-color;
+    color: $light-color;
+  }
+}
+
+.list-city {
+  margin: 4rem 0;
+  padding: 0 1.3rem;
+  .city-results {
+    width: 50%;
+    border: 1.5px solid $dark-color;
+    margin: 1rem auto;
+    padding: 1.2rem;
+    p{
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    ul li {
+      display: flex;
+      color: rgba($black,.5);
+    }
+  }
+}
+
+
+footer {
+  padding: 2rem;
+  background: $dark-color; 
+  color: $light-color;
+  p {
+    text-align: center;
+  }
+}
+@import 'responsive';

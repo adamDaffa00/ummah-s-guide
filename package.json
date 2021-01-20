@@ -1,0 +1,12 @@
+{
+  "name": "alquran-web",
+  "version": "1.0.0",
+  "description": "alquran-web Adalah website untuk membaca Alquran secara online, dan bisa dibaca kapan saja dan dimana saja selama terkoneksi engam internet",
+  "main": "index.js",
+  "scripts": {
+    "test": "http-server",
+    "sass": "sass scss/style.scss css/style.css"
+  },
+  "author": "adam daffa",
+  "license": "MIT"
+}

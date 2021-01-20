@@ -1,0 +1,70 @@
+
+@include mediaSm{
+  .landing {
+    height: 100vh;
+  }
+  
+  .list-city {
+    .city-results {
+      width: 100%;
+    }
+  }
+
+}  
+  
+@include mediaMd {
+  .top-navbar {
+    .menu {
+      display: none;
+    }
+  }
+  
+  .menu {
+    grid-template-columns: 1fr ;
+  }
+  
+  
+ .list-surah {
+   & {
+     padding: 2em 0;
+   }
+ }
+ .list {
+    width: 90%;
+    margin: .7rem auto;
+    font-size: 1rem;
+ }
+
+
+.ayat-section {
+  li {
+   .nav-ayat {
+     margin-bottom: 1rem;
+   }
+   .content-ayat {
+     padding: 0 1rem;
+   }
+  }
+}  
+ 
+
+ .list-doa,.list-wirid {
+  li {
+    padding: 1.5rem;
+  }
+}
+
+  .city-input {
+    input,button {
+      padding: .6rem;
+      font-size: .9rem;
+    }
+    input {
+      width: 75%;
+    }
+    button {
+      width: 25%;
+    }
+  }
+
+}

@@ -1,0 +1,433 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+Pro:wght@300&display=swap");
+@font-face {
+  font-family: lpmq;
+  src: url(../font/lpmq.woff);
+}
+@media screen and (max-width: 500px) {
+  .landing {
+    height: 100vh;
+  }
+
+  .list-city .city-results {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .top-navbar .menu {
+    display: none;
+  }
+
+  .menu {
+    grid-template-columns: 1fr;
+  }
+
+  .list-surah {
+    padding: 2em 0;
+  }
+
+  .list {
+    width: 90%;
+    margin: 0.7rem auto;
+    font-size: 1rem;
+  }
+
+  .ayat-section li .nav-ayat {
+    margin-bottom: 1rem;
+  }
+  .ayat-section li .content-ayat {
+    padding: 0 1rem;
+  }
+
+  .list-doa li, .list-wirid li {
+    padding: 1.5rem;
+  }
+
+  .city-input input, .city-input button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  .city-input input {
+    width: 75%;
+  }
+  .city-input button {
+    width: 25%;
+  }
+}
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+p, ul {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #27045b;
+}
+
+.arab {
+  font-family: lpmq;
+}
+
+.box {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: 0.5s;
+}
+
+.box-appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.search-input {
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+
+body {
+  padding: 0;
+  font-family: "Open sans", Sans-Serif;
+  margin: 0;
+  max-width: 100vw;
+  line-height: 1.6;
+}
+
+.top-navbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  left: 0;
+  color: #fff;
+  background-color: #27045b;
+}
+.top-navbar .logo a {
+  font-weight: 800;
+  color: #fff;
+}
+.top-navbar .config {
+  font-size: 2rem;
+}
+.top-navbar .config-menu {
+  margin: 0;
+  position: fixed;
+  right: 0;
+  top: 60px;
+  transform: translatex(100%);
+  height: calc(100vh - 60px);
+  padding: 2rem;
+  background: #27045b;
+  color: #fff;
+  transition: 0.5s;
+}
+.top-navbar .config-menu li {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.top-navbar .config-menu.show {
+  transform: translatex(0%);
+}
+
+.landing {
+  height: 100vh;
+  width: 100%;
+  background: url("../img/bg-img.jpg") no-repeat center center/cover;
+}
+.landing .gradient-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.landing .gradient-bg img {
+  height: 250px;
+  width: 250px;
+  margin: 3rem 0;
+}
+.landing .gradient-bg input {
+  height: 45px;
+  display: block;
+  outline: none;
+  padding: 0.7rem 1rem;
+  font-size: 1.1rem;
+}
+.landing .gradient-bg button {
+  height: 45px;
+  display: block;
+  border: none;
+  background: none;
+  outline: none;
+  background: #ffd739;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0 2rem;
+  font-weight: 800;
+  text-align: center;
+  opacity: 1;
+}
+.landing .gradient-bg button:hover {
+  transition: 0.5s;
+  opacity: 0.8;
+}
+
+.menu {
+  color: #fff;
+  padding: 1rem;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 130px);
+  justify-content: center;
+  align-items: center;
+}
+.menu {
+  background: rgba(39, 4, 91, 0.03);
+  padding: 4rem 1rem;
+}
+.menu .card {
+  height: 130px;
+  transition: 0.5s;
+}
+.menu .card:nth-child(1) {
+  background: url("../img/mp3.jpg") no-repeat center center/cover;
+}
+.menu .card:nth-child(2) {
+  background: url("../img/window.jpg") no-repeat center center/cover;
+}
+.menu .card:nth-child(3) {
+  background: url("../img/mosque.jpg") no-repeat center center/cover;
+}
+.menu .card:nth-child(4) {
+  background: url("../img/pray.jpg") no-repeat center center/cover;
+}
+.menu .card:nth-child(5) {
+  background: url("../img/alquran.jpg") no-repeat center center/cover;
+}
+.menu .card .brightness-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  background: rgba(39, 4, 91, 0.5);
+}
+.menu .card:hover {
+  border: 5px solid #27045b;
+}
+
+.list-surah, .list-murotal, .list-asma, .list-doa, .list-wirid, .list-city {
+  padding: 4rem 0;
+}
+.list-surah button, .list-murotal button, .list-asma button, .list-doa button, .list-wirid button, .list-city button {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  color: #ffd739;
+}
+
+.list {
+  border: 0.7px solid #27045b;
+  display: flex;
+  width: 70%;
+  padding: 0.8rem 1.3rem;
+  margin: 1rem auto;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+}
+.list:hover {
+  color: #fff;
+  background: #27045b;
+  box-shadow: 0 0 7px 1px rgba(39, 4, 91, 0.5);
+  transition: 0.5s;
+}
+.list:hover div p:nth-child(2) {
+  transition: 0.5s;
+  color: #fff;
+}
+.list div {
+  flex: 1;
+  margin-left: 2rem;
+}
+.list div p:nth-child(1) {
+  font-size: 1.3rem;
+}
+.list div p:nth-child(2) {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.8rem;
+}
+
+/** list ayat style  **/
+.ayat-section {
+  padding-top: 3rem;
+}
+.ayat-section .bismillah {
+  text-align: center;
+  font-size: 2rem;
+}
+.ayat-section ul {
+  margin: 0;
+  padding: 0;
+}
+.ayat-section li {
+  border: 1px solid #27045b;
+}
+.ayat-section li .nav-ayat {
+  background: #27045b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  height: 50px;
+  margin-bottom: 2rem;
+}
+.ayat-section li .content-ayat {
+  padding: 0 1rem;
+}
+.ayat-section li button {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  color: #ffd739;
+}
+.ayat-section li .arab {
+  text-align: right;
+  font-size: 2rem;
+}
+.ayat-section li p {
+  margin: 2rem 0;
+}
+.ayat-section li p.arti {
+  font-style: italic;
+}
+
+.list-doa li, .list-wirid li {
+  padding: 2rem 3.5rem;
+  margin: 1.3rem 0;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+}
+.list-doa li p:nth-child(3), .list-wirid li p:nth-child(3) {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.city-input {
+  border: 1px solid #27045b;
+  margin-top: 6rem;
+}
+.city-input input, .city-input button {
+  padding: 0.7rem;
+  font-size: 1.1rem;
+}
+.city-input input {
+  width: 85%;
+  border: none;
+  outline: none;
+}
+.city-input button {
+  border: none;
+  background: none;
+  width: 15%;
+  background: #ffd739;
+  color: #fff;
+}
+
+.list-city {
+  margin: 4rem 0;
+  padding: 0 1.3rem;
+}
+.list-city .city-results {
+  width: 50%;
+  border: 1.5px solid #27045b;
+  margin: 1rem auto;
+  padding: 1.2rem;
+}
+.list-city .city-results p {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.list-city .city-results ul li {
+  display: flex;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+footer {
+  padding: 2rem;
+  background: #27045b;
+  color: #fff;
+}
+footer p {
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  .landing {
+    height: 100vh;
+  }
+
+  .list-city .city-results {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .top-navbar .menu {
+    display: none;
+  }
+
+  .menu {
+    grid-template-columns: 1fr;
+  }
+
+  .list-surah {
+    padding: 2em 0;
+  }
+
+  .list {
+    width: 90%;
+    margin: 0.7rem auto;
+    font-size: 1rem;
+  }
+
+  .ayat-section li .nav-ayat {
+    margin-bottom: 1rem;
+  }
+  .ayat-section li .content-ayat {
+    padding: 0 1rem;
+  }
+
+  .list-doa li, .list-wirid li {
+    padding: 1.5rem;
+  }
+
+  .city-input input, .city-input button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  .city-input input {
+    width: 75%;
+  }
+  .city-input button {
+    width: 25%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
