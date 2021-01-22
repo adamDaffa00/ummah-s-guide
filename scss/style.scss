@@ -50,6 +50,24 @@ a {
   width: 90%;
   margin: auto;
 }
+// go to home button 
+.home-btn {
+  position: fixed;
+  bottom: 10%;
+  left : 50%;
+  transform: translate(-50%,-10%);
+  background: $light-color;
+  border-radius: 50%;
+  box-shadow: 0 0 5px .5px rgba($black,.09);
+  z-index: 999;
+  padding: .3rem .1rem;
+  button {
+    font-size: 1.9rem;
+    outline: none;
+    @include buttonFormat;
+  }
+}
+
 
 body {
   padding: 0;

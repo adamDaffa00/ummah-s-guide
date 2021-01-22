@@ -90,6 +90,24 @@ a {
   margin: auto;
 }
 
+.home-btn {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.09);
+  z-index: 999;
+  padding: 0.3rem 0.1rem;
+}
+.home-btn button {
+  font-size: 1.9rem;
+  outline: none;
+  border: none;
+  background: none;
+}
+
 body {
   padding: 0;
   font-family: "Open sans", Sans-Serif;
