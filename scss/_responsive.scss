@@ -9,7 +9,7 @@
       width: 100%;
     }
   }
-
+  
 }  
   
 @include mediaMd {
@@ -38,6 +38,7 @@
 
 .ayat-section {
   li {
+    padding: 0;
    .nav-ayat {
      margin-bottom: 1rem;
    }

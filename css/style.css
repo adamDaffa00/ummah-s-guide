@@ -32,6 +32,9 @@
     font-size: 1rem;
   }
 
+  .ayat-section li {
+    padding: 0;
+  }
   .ayat-section li .nav-ayat {
     margin-bottom: 1rem;
   }
@@ -294,7 +297,7 @@ body {
 
 /** list ayat style  **/
 .ayat-section {
-  padding-top: 3rem;
+  padding-top: 4rem;
 }
 .ayat-section .bismillah {
   text-align: center;
@@ -305,6 +308,8 @@ body {
   padding: 0;
 }
 .ayat-section li {
+  margin: 1.5rem 0;
+  padding: 0;
   border: 1px solid #27045b;
 }
 .ayat-section li .nav-ayat {
@@ -317,20 +322,21 @@ body {
   margin-bottom: 2rem;
 }
 .ayat-section li .content-ayat {
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 .ayat-section li button {
   border: none;
   background: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0 0.5rem;
   color: #ffd739;
 }
 .ayat-section li .arab {
   text-align: right;
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
 .ayat-section li p {
+  font-size: 0.9rem;
   margin: 2rem 0;
 }
 .ayat-section li p.arti {
@@ -388,6 +394,12 @@ body {
   color: rgba(0, 0, 0, 0.5);
 }
 
+.audio {
+  position: absolute;
+  left: -999;
+  opacity: 0;
+}
+
 footer {
   padding: 2rem;
   background: #27045b;
@@ -425,6 +437,9 @@ footer p {
     font-size: 1rem;
   }
 
+  .ayat-section li {
+    padding: 0;
+  }
   .ayat-section li .nav-ayat {
     margin-bottom: 1rem;
   }
