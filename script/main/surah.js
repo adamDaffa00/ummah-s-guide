@@ -1,7 +1,9 @@
-const audioTag = document.querySelector('.audio audio');
+
+import './../component/ayah-item.js';
+import './../component/ayah-list.js';
 
 document.addEventListener('DOMContentLoaded',renderAyah);
-
+document.addEventListener('click',featured);
 
 async function renderAyah(){
   try {
@@ -12,6 +14,7 @@ async function renderAyah(){
     alert(error);
   }
 }
+
 
 function getAyahs(numb){
  return fetch(`https://api.quran.sutanlab.id/surah/${numb}`)
@@ -26,86 +29,39 @@ function getAyahs(numb){
 
 
 function displayAyah(ayah){
-  let list = '';
-   const listAyahs = ayah.verses;
-   
-   listAyahs.forEach(item => list += renderListAyahs(item));
-   const ayahUl = document.querySelector('.ayat-section ul');
-   const ayahLi = document.createElement('li');
-   ayahLi.classList.add('box');
-   ayahLi.innerHTML = list;
-   ayahUl.appendChild(ayahLi);
+   const ayahLi = document.querySelector('ayah-list');
+   ayahLi.ayahs = ayah.verses;
 }
 
-
-function renderListAyahs(ayah){
-  return `
-      <div class="nav-ayat">
-        <button>
-          ${ayah.number.inSurah}
-        </button>
-        <div>
-          <button  onclick="playSound(event)" data-src="${ayah.audio.primary}"><i class="fas fa-play"></i></button>
-          <button onclick="addBookmark(event)"
-          data-arabic="${ayah.text.arab}"
-          data-translate="${ayah.translation.id}"
-          data-tafsir="${ayah.tafsir.id.long}"
-          data-latin="${ayah.text.transliteration.en}"
-          ><i class="fas fa-bookmark"></i></button>
-          <button onclick="copy(event)" data-textquran="${ayah.text.arab}" data-translate="${ayah.translation.id}"><i class="fas fa-copy"></i></button>
-          <button onclick="share()"><i class="fas fa-share"></i></button>
-        </div>
-      </div>
-      <div class="content-ayat">
-        <p class="arab">
-          ${ayah.text.arab}
-        </p>
-        <p class="latin">
-          ${ayah.text.transliteration.en}
-        </p>
-        <p class="arti">
-          <strong> artinya : <br></strong>
-          ${ayah.translation.id}
-        </p>
-        <p class="tafsir">
-          <strong> tafsir : <br></strong>
-           ${ayah.tafsir.id.long}
-          </p>
-      </div>
-  `;
-}
-// play audio
-function playSound(e){
-  const src = e.target.dataset.src;
-  audioTag.src = src;
-  audioTag.play();
+function featured(e){
+  // playing audio 
+  if(e.target.classList.contains('fa-play')){
+    const src = e.target.parentElement.dataset.src;
+    const audioTag = document.querySelector('audio');
+    audioTag.src = src;
+    audioTag.play();
+  }else if(e.target.classList.contains('fa-bookmark')){
+    
+    addBookmark(e.target);
+  }else if (e.target.classList.contains('fa-copy')) {
+    const txtArabic = e.target.parentElement.dataset.textquran;
+    const txtTranslate = e.target.parentElement.dataset.translate;
+    const txt = [txtArabic,txtTranslate];
+    const el = document.createElement('textarea');
+    txt.forEach(item => {
+      el.value += item;
+    });
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  }
 }
 
-// bookmark
-function addBookmark(e){
-  const arabTxt = e.target.dataset.arabic;
-  const latinTxt = e.target.dataset.latin;
-  const translateTxt = e.target.dataset.translate;
-  const tafsirTxt  = e.target.dataset.tafsir;
+function addBookmark(target){
+  const arabTxt = target.parentElement.dataset.arabic;
+  const latinTxt = target.parentElement.dataset.latin;
+  const translateTxt = target.parentElement.dataset.translate;
+  const tafsirTxt  = target.parentElement.dataset.tafsir;
+  console.log(arabTxt,latinTxt,translateTxt,tafsirTxt);
 } 
-
-// copy text
-function copy(e){
-  const txtArabic = e.target.dataset.textquran;
-  const txtTranslate = e.target.dataset.translate;
-  const txt = [txtArabic,txtTranslate];
-  const el = document.createElement('textarea');
-  txt.forEach(item => {
-    el.value += item;
-  });
-  document.body.appendChild(el);
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el);
- }
- 
- 
- // share ayah
-function share(){
-  alert('share succesfull');
-}
