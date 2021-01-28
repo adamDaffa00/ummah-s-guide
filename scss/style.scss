@@ -304,6 +304,9 @@ body {
     p {
       font-size: .9rem;
       margin: 2rem 0;
+    &.hide{
+      display: none;
+    }
     &.arti {
        font-style: italic;
     }

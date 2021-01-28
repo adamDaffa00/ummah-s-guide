@@ -339,6 +339,9 @@ body {
   font-size: 0.9rem;
   margin: 2rem 0;
 }
+.ayat-section li p.hide {
+  display: none;
+}
 .ayat-section li p.arti {
   font-style: italic;
 }
