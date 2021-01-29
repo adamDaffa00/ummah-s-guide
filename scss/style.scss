@@ -215,6 +215,7 @@ body {
 
 
 .list-surah,.list-murotal,.list-asma,.list-doa,.list-wirid,.list-city{
+  display: block;
   & {
     padding: 4rem 0;
   }

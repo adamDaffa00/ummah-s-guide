@@ -1,6 +1,17 @@
  
+ const menuCard = document.querySelectorAll('.menu .card');
+ 
  
 document.addEventListener('DOMContentLoaded',displaySurah());
+
+
+menuCard[0].addEventListener('click',directToMurotalPage);
+
+
+
+function directToMurotalPage(){
+ window.location.pathname = '../../murotal.html';
+}
 
 
 
@@ -30,7 +41,7 @@ function render(listSurah){
   listSurah.forEach(surah => list += displayListSurah(surah));
   const listSurahEl = document.querySelector('.list-surah');
   listSurahEl.innerHTML = list;
-  return list
+  return list;
 }
 
 function displayListSurah(surah){

@@ -253,6 +253,9 @@ body {
 }
 
 .list-surah, .list-murotal, .list-asma, .list-doa, .list-wirid, .list-city {
+  display: block;
+}
+.list-surah, .list-murotal, .list-asma, .list-doa, .list-wirid, .list-city {
   padding: 4rem 0;
 }
 .list-surah button, .list-murotal button, .list-asma button, .list-doa button, .list-wirid button, .list-city button {
