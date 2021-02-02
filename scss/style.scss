@@ -60,11 +60,14 @@ a {
   border-radius: 50%;
   box-shadow: 0 0 5px .5px rgba($black,.09);
   z-index: 999;
-  padding: .3rem .1rem;
-  button {
-    font-size: 1.9rem;
+  padding: .4rem;
+  a {
+    display: block;
     outline: none;
     @include buttonFormat;
+    i{
+      font-size: 1.9rem;
+    }
   }
 }
 
@@ -253,11 +256,16 @@ body {
      flex: 1;
      margin-left: 2rem;
      p:nth-child(1) {
-       font-size: 1.3rem;
+       font-size: 2rem;
      }
      p:nth-child(2) {
        font-style: italic;
-       color: rgba($black,.5);
+       color: rgba($black,.6);
+       font-size: .8rem;
+       margin: .7rem 0;
+     }
+     p:nth-child(3){
+       color: rgba($black,.6);
        font-size: .8rem;
      }
     }
@@ -265,7 +273,6 @@ body {
 }
 
 /** list ayat style  **/
-
 .ayat-section {
   padding-top: 4rem;
   .bismillah {

@@ -6,11 +6,15 @@ document.addEventListener('DOMContentLoaded',displaySurah());
 
 
 menuCard[0].addEventListener('click',directToMurotalPage);
+menuCard[1].addEventListener('click',directToAsmaulHusnaPage);
 
 
 
 function directToMurotalPage(){
  window.location.pathname = '../../murotal.html';
+}
+function directToAsmaulHusnaPage(){
+   window.location.pathname = '../../asmaul-husna.html';
 }
 
 

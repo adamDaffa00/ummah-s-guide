@@ -102,13 +102,16 @@ a {
   border-radius: 50%;
   box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.09);
   z-index: 999;
-  padding: 0.3rem 0.1rem;
+  padding: 0.4rem;
 }
-.home-btn button {
-  font-size: 1.9rem;
+.home-btn a {
+  display: block;
   outline: none;
   border: none;
   background: none;
+}
+.home-btn a i {
+  font-size: 1.9rem;
 }
 
 body {
@@ -290,11 +293,16 @@ body {
   margin-left: 2rem;
 }
 .list div p:nth-child(1) {
-  font-size: 1.3rem;
+  font-size: 2rem;
 }
 .list div p:nth-child(2) {
   font-style: italic;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.8rem;
+  margin: 0.7rem 0;
+}
+.list div p:nth-child(3) {
+  color: rgba(0, 0, 0, 0.6);
   font-size: 0.8rem;
 }
 
