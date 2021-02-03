@@ -56,7 +56,7 @@ function displayListSurah(surah){
           <p> <strong> ${surah.name.transliteration.id} </strong></p>
           <p> ${surah.name.translation.id}: ${surah.numberOfVerses} ayat </p>
         </div>
-        <p> <strong> ${surah.name.short} </strong> </p>
+        <p class="arab"> <strong> ${surah.name.short} </strong> </p>
       </li>
   `;
   return str;

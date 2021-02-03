@@ -17,7 +17,7 @@ function displayList(item){
       <li class="list box">
         <p> ${item.number} </p>
         <div>
-          <p> <strong> ${item.arabic} </strong> </p>
+          <p class="arab"> <strong> ${item.arabic} </strong> </p>
           <p> ${item.latin} </p>         
           <p> ${item.meaning} </p>
         </div>

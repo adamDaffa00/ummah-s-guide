@@ -8,7 +8,7 @@ class murotaIItem extends HTMLElement {
      <li class="list box">
       <p> ${this._ayah.nomor} </p>
       <div>
-        <p> <strong> ${this._ayah.nama} </strong> </p>
+        <p class="name-surah"> <strong> ${this._ayah.nama} </strong> </p>
         <p> Syaikh Mishari Alafasy </p>
       </div>
       <button class="playBtn" data-audio="${this._ayah.audio}"><i class="fas fa-play"></i></button>

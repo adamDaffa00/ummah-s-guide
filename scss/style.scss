@@ -230,6 +230,26 @@ body {
 
 }
 
+
+.list-murotal,.list-surah{
+  .name-surah{
+    font-size: 1.2rem;
+  }
+}
+
+.list-wirid li {
+  h3 {
+    font-size: 2.1rem;
+    font-weight: 400;
+  }
+  p{
+    font-size: .8rem;
+    color: rgba($black,.6);
+  }
+}
+
+
+
 .list {
     border: .7px solid $dark-color;
     display: flex;
@@ -255,14 +275,11 @@ body {
     div {
      flex: 1;
      margin-left: 2rem;
-     p:nth-child(1) {
-       font-size: 2rem;
-     }
      p:nth-child(2) {
        font-style: italic;
        color: rgba($black,.6);
        font-size: .8rem;
-       margin: .7rem 0;
+       margin: .5rem 0;
      }
      p:nth-child(3){
        color: rgba($black,.6);
