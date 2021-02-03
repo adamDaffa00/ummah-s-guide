@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded',displaySurah());
 
 menuCard[0].addEventListener('click',directToMurotalPage);
 menuCard[1].addEventListener('click',directToAsmaulHusnaPage);
+menuCard[2].addEventListener('click',directToPrayTimePage);
+menuCard[3].addEventListener('click',directToPrayPage);
+menuCard[4].addEventListener('click',directToWiridPage);
 
 
 
@@ -16,6 +19,16 @@ function directToMurotalPage(){
 function directToAsmaulHusnaPage(){
    window.location.pathname = '../../asmaul-husna.html';
 }
+function directToPrayTimePage(){
+   window.location.pathname = '../../waktu-sholat.html';
+}
+function directToPrayPage(){
+  alert("yokai");
+}
+function directToWiridPage(){
+ window.location.pathname = '../../wirid.html';
+}
+
 
 
 

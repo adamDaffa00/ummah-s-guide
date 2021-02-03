@@ -213,10 +213,6 @@ body {
 }
 
 
-
-
-
-
 .list-surah,.list-murotal,.list-asma,.list-doa,.list-wirid,.list-city{
   display: block;
   & {
@@ -227,13 +223,18 @@ body {
     font-size: 1.5rem;
     color: $secondary-color;
   }
-
 }
 
 
 .list-murotal,.list-surah{
   .name-surah{
     font-size: 1.2rem;
+  }
+}
+
+.list-asma {
+  .arab {
+    font-size: 2rem;
   }
 }
 
